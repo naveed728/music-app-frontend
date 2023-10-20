@@ -1,0 +1,23 @@
+<mat-toolbar >
+    <!-- Logo on the left -->
+      <span class="navbar-name">Kaplan Music</span>
+    <!-- Buttons on the right -->
+    <ng-container *ngIf="!isAuthenticated">
+    <div class="button-container">
+      <button mat-raised-button  (click)="openLoginDialog()">Login</button>
+      <button mat-raised-button (click)="openSignupDialog()">Signup</button>
+    </div>
+    </ng-container>
+    <ng-container *ngIf="isAuthenticated">
+      <div class="logout-button-container"> 
+        <button
+          mat-raised-button
+          (click)="logout()"
+        >
+        Logout
+        </button>
+      </div>
+    </ng-container>
+
+  </mat-toolbar>
+  

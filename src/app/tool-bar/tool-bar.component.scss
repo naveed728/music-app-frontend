@@ -1,0 +1,29 @@
+.mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+  }
+  
+  .logo img{
+    display: flex;
+    align-items: center;
+    width:100px;
+    height:60px;
+
+  }
+
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    margin-left: 10px; /* Adjust spacing as needed */
+  }
+
+  .navbar-name {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;  }
+  

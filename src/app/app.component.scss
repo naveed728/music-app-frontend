@@ -1,0 +1,33 @@
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+ 
+.outer-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .inner-container {
+    width: 100%;
+    max-width: 850px;
+    padding: 0 10px;
+  }
+  /* Add this to your external CSS file, e.g., styles.css */
+
+.welcome-text {
+    text-align: center;
+    font-size: 24px;
+    margin: 30px 0;
+    font-weight: bold;
+    color:white
+  }
+ /* Set background image for the body */
+body{
+    background-image: url('https://images.pexels.com/photos/1763075/pexels-phsssoto-1763075.jpeg');
+    background-size: auto;
+    background-repeat: round;
+    background-attachment: fixed;
+}

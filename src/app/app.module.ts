@@ -17,15 +17,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
-
-
+import { PostListComponent } from './post-list/post-list.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { RichTextComponent } from './rich-text/rich-text.component';
+import { QuillModule } from 'ngx-quill'
+import { FormsModule } from '@angular/forms';
+import { ViewFriendComponent } from './view-friend/view-friend.component';
+import { AddFriendComponent } from './add-friend/add-friend.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupDialogComponent,
     ToolBarComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    PostListComponent,
+    HomePageComponent,
+    RichTextComponent,
+    ViewFriendComponent,
+    AddFriendComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +50,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDialogModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    QuillModule.forRoot(),
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

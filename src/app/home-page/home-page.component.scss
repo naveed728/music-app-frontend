@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sidebar {
+    width: 200px; /* Adjust the width as needed */
+    background-color: #333; /* Sidebar background color */
+    color: #fff; /* Text color for buttons */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #555; /* Button background color */
+    border: none;
+    color: #fff; /* Text color for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar button:hover {
+    background-color: #777; /* Hover state background color */
+  }
+  
+  .center {
+    flex: 1; /* Center content */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  

@@ -35,11 +35,9 @@ export class LoginDialogComponent  implements OnInit {
     if (this.loginForm.valid) {
       const formData = this.loginForm.value;
 
-       // Encode the password to base64
-       const encodedPassword = btoa(formData.password);
+       // Encoding the password to base64
+       formData.password = btoa(formData.password);
 
-       // Update the password in the form data with the encoded value
-       formData.password = encodedPassword;
      
       // You can send the data to your server or perform any other actions here.
       this._http.post(`http://localhost:5000/api/v1/user/users/login`, formData)
@@ -47,6 +45,8 @@ export class LoginDialogComponent  implements OnInit {
         (response: any) => {
           // Success: Loging  the response and  a success alert
           console.log('Response:', response);
+          localStorage.setItem('jwt', response.token);
+          console.log(localStorage.getItem('jwt'));
           this.dialogRef.close();
           
           Swal.fire({

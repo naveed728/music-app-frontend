@@ -1,0 +1,39 @@
+.user-list {
+  padding: 10px; 
+  .user-list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+      font-size: 20px;
+    }
+
+    &-close-icon {
+      font-size: 20px !important;
+      cursor: pointer;
+    }
+  }
+
+  .user-list__user-container {
+    .user-list__user-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      &:nth-child(odd) {
+        background-color: #f0f0f0;
+      }
+
+      &:nth-child(even) {
+        background-color: #e0e0e0;
+      }
+
+      .user-list__user-details {
+        flex: 1;
+      }
+    }
+  }
+}

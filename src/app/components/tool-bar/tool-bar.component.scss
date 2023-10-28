@@ -1,4 +1,5 @@
 .mat-toolbar {
+  
     display: flex;
     justify-content: space-between;
     background-color: black;
@@ -26,4 +27,7 @@
     color: white;
     font-weight: bold;
     font-size: 15px;  }
-  
+
+  .custom-dialog{
+    padding-top:2em;
+  }

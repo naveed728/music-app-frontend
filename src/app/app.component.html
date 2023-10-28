@@ -1,14 +1,14 @@
 <app-tool-bar></app-tool-bar>
 <div *ngIf="!isAuthenticated" class="outer-container">
-<div class="inner-container">
+  <div class="inner-container">
     <div class="welcome-text">Welcome to Kaplan Music Store</div>
-<mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile *ngFor="let imageUrl of imageUrls">
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let imageUrl of imageUrls">
         <div class="image-container">
-            <img [src]="imageUrl" alt="Image" />
-          </div>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+          <img [src]="imageUrl" alt="Image" />
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 <app-home-page *ngIf="isAuthenticated"></app-home-page>

@@ -1,19 +1,34 @@
-// auth.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private token:string | null = null;
+
   isAuthenticated = false;
 
+  constructor(){
+    this.token = localStorage.getItem('token');
+  }
+
+  intialiseToken(token:string){
+    this.token = token;
+    localStorage.setItem('token',token);
+  }
+
+  fetchToken(): string | null {
+    console.log(this.token)
+    return this.token;
+  }
+
   login() {
-    // Implement your login logic here, and set isAuthenticated to true upon successful login.
     this.isAuthenticated = true;
   }
 
   logout() {
-    // Implement your logout logic here, and set isAuthenticated to false upon successful logout.
     this.isAuthenticated = false;
+    this.token = null;
+    localStorage.removeItem('token');
   }
 }

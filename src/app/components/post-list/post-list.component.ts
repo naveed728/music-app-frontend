@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-post-list',
@@ -14,16 +14,18 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     // Fetch posts from the API
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('token');
 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-
+    console.log(token,"naveed");
+    console.log(headers);
     this._http.get('http://localhost:5000/api/v1/user/posts/getposts', { headers: headers })
       .subscribe(
         (response: any) => {
-          this.posts = response.posts; 
+          this.posts = response.posts;
+          console.log(this.posts) 
         },
         (error) => {
           console.error('Error fetching posts', error);

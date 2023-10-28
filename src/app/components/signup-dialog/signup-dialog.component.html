@@ -1,0 +1,72 @@
+  <div class="signup-dialog">
+    <div class="signup-dialog__heading">
+      <h2 class="signup-dialog__heading__title">Sign up</h2>
+      <mat-icon
+        [inline]="true"
+        class="signup-dialog__heading__close-icon"
+        (click)="this.dialogRef.close()"
+        >close</mat-icon
+      >
+    </div>
+    <form
+      class="signup-dialog__form"
+      [formGroup]="signupForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field class="signup-dialog__form__field" appearance="outline">
+        <mat-label>First name</mat-label>
+        <input
+          matInput
+          type="text"
+          name="firstName"
+          formControlName="first_name"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="signup-dialog__form__field" appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input
+          matInput
+          type="text"
+          name="lastName"
+          formControlName="last_name"
+          required
+        />
+        
+      </mat-form-field>
+      <mat-form-field class="signup-dialog__form__field" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          name="email"
+          formControlName="email"
+          autocomplete="off"
+          required
+        />
+        
+      </mat-form-field>
+      <mat-form-field class="signup-dialog__form__field" appearance="outline">
+        <mat-label>Password</mat-label>
+        <div class="signup-dialog__form__field__password">
+          <input
+            matInput
+            type="password"
+            name="password"
+            formControlName="password"
+            required 
+          />
+        </div>
+      </mat-form-field>
+      <button
+        class="signup-dialog__form__submit-button"
+        type="submit"
+        color="primary"
+        [disabled]="!signupForm.valid"
+        mat-raised-button
+      >
+        Sign up
+      </button>
+    </form>
+  </div>
+  
+  

@@ -15,7 +15,7 @@ export class ViewFriendComponent implements OnInit{
 
 
   ngOnInit(): void {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
     });  

@@ -1,0 +1,64 @@
+.user-list {
+  padding: 10px;
+}
+
+.user-list__header {
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+
+
+.user-list__user-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-list__user-item:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.user-list__user-details {
+  flex: 1;
+}
+
+.user-list__user-checkbox input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+.user-list__submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  transition: background-color 0.3s;
+}
+
+.user-list__submit-button:hover {
+  background-color: #0056b3;
+}
+
+.user-list__submit-button[disabled] {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
+
+.user-list__header-close-icon {
+  font-size: 20px !important;
+  cursor: pointer;
+}

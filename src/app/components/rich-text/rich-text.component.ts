@@ -33,7 +33,7 @@ export class RichTextComponent implements OnInit {
       body: this.editorContent
     };
 
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('token');
     console.log(token)
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,

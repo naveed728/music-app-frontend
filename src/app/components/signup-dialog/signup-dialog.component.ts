@@ -3,6 +3,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2'
+import { AuthService } from '../../services/auth.service';
+import { dataService } from 'src/app/services/data.service';
+import { IUserReqResponse } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-signup-dialog',
@@ -16,7 +19,9 @@ export class SignupDialogComponent implements OnInit{
   constructor(
     public dialogRef: MatDialogRef<SignupDialogComponent>,
     private fb: FormBuilder,
-    private _http: HttpClient
+    private _http: HttpClient,
+    private authService: AuthService,
+    private dataService:dataService
   ) {
     this.signupForm = this.fb.group({
       first_name: ['', Validators.required],
@@ -34,15 +39,15 @@ export class SignupDialogComponent implements OnInit{
     if (this.signupForm.valid) {
       const formData = this.signupForm.value;
 
-      // Encode the password to base64
+      // Encoding the password to base64
       const encodedPassword = btoa(formData.password);
 
-      // Update the password in the form data with the encoded value
+      // Updating the password in the form data with the encoded value
       formData.password = encodedPassword;
 
-      this._http.post(`http://localhost:5000/api/v1/user/users/addUser`, formData)
+      this.dataService.signup(formData)
         .subscribe(
-          (response: any) => {
+          (response: IUserReqResponse) => {
             // Success: Loging  the response and  a success alert
             console.log('Response:', response);
             this.dialogRef.close();

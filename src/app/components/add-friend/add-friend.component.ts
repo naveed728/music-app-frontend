@@ -15,10 +15,18 @@ export class AddFriendComponent implements OnInit {
   constructor(private http: HttpClient,public dialogRef: MatDialogRef<AddFriendComponent>,
     ) { }
 
-
+    selectUser(userId: any): void {
+      if (userId === this.selectedUserId) {
+        // If the same user's checkbox is clicked again, deselect them.
+        this.selectedUserId = null;
+      } else {
+        // Select the clicked user and deselect others.
+        this.selectedUserId = userId;
+      }
+    }
      
     ngOnInit(): void {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
     });  
@@ -29,15 +37,10 @@ export class AddFriendComponent implements OnInit {
     });
   }
   
-  selectUser(userId: number) {
-    this.selectedUserId = userId;
-  }
+  
 
   onSubmit() {
     if (this.selectedUserId !== null) {
-      // Replace 'yourApiEndpoint' with the actual API endpoint
-      // You can make an HTTP request to send the selected user ID
-      // For example, using Angular's HttpClient.
       console.log(`Selected User ID: ${this.selectedUserId}`);
       this.dialogRef.close();
     }

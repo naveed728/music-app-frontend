@@ -25,5 +25,4 @@ export class AppComponent {
   get isAuthenticated(): boolean {
     return this.authService.isAuthenticated;
   }
-
 }

@@ -1,0 +1,21 @@
+<div class="user-list">
+  <div class="user-list__header">
+    <h3 class="user-list__header-title">Select to Add</h3>
+    <mat-icon [inline]="true" class="user-list__header-close-icon" (click)="this.dialogRef.close()">close</mat-icon>
+  </div>
+  <div class="user-list__user-container">
+    <div *ngFor="let user of users" class="user-list__user-item">
+      <div class="user-list__user-details">
+        {{ user.first_name }} {{ user.last_name }}
+      </div>
+      <div class="user-list__user-checkbox">
+        <input
+          type="checkbox"
+          [checked]="user.userid === selectedUserId"
+          (change)="selectUser(user.userid)"
+        />
+      </div>
+    </div>
+  </div>
+  <button class="user-list__submit-button" (click)="onSubmit()">Add Friend</button>
+</div>

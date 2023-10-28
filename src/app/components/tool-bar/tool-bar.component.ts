@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SignupDialogComponent } from '../signup-dialog/signup-dialog.component';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RichTextComponent } from '../rich-text/rich-text.component';
 
@@ -35,7 +35,7 @@ export class ToolBarComponent {
     // Handle the response
     console.log('Logout successful', response);
     // Log the user out by removing the JWT from local storage
-    localStorage.removeItem('jwt');
+    localStorage.removeItem('token');
 
   }, error => {
     // Handle any errors

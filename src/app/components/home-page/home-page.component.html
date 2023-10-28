@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="sidebar">
+    <div class="sidebar__button-container">
+      <button class="button-container__button">Feed</button> 
+      <button class="button-container__button" (click)="openCreatepostDialog()">Create Post</button>
+      <button class="button-container__button" (click)="openAddFriendsDialog()">Add Friend</button>
+      <button class="button-container__button" (click)="openViewFriendsDialog()">View Friends</button>
+      <button class="button-container__button" (click)="logout()">Logout</button>
+    </div>
+  </div>
+  <div class="center">
+    <div class="center__post-list">
+      <app-post-list></app-post-list>
+    </div>
+  </div>
+</div>

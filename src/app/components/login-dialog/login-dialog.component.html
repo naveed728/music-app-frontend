@@ -1,0 +1,48 @@
+
+<div class="login-container">
+  <div class="login-container__header">
+    <h2 class="login-container__header__title">Log in</h2>
+    <mat-icon
+      [inline]="true"
+      class="login-container__header__close-icon"
+      (click)="this.dialogRef.close()"
+      >close</mat-icon
+    >
+  </div>
+  <form class="login-container__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="login-container__form__field" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        name="email"
+        formControlName="email"
+        autocomplete="off"
+        required  
+      />
+      
+    </mat-form-field>
+    <mat-form-field class="login-container__form__field" appearance="outline">
+      <mat-label>Password</mat-label>
+      <div class="login-container__form__field__password">
+        <input
+          matInput
+          type="password" 
+          name="password"
+          formControlName="password"
+          required 
+        />
+      </div>
+    </mat-form-field>
+    <button
+      class="login-container__form__submit-button"
+      type="submit"
+      mat-raised-button  
+    >
+      Log in
+    </button>
+  </form>
+</div>
+
+
+
+
